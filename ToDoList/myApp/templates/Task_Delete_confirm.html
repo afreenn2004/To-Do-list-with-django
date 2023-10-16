@@ -1,0 +1,20 @@
+<!--Afreen Ajaz-->
+{% extends 'Layout.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Delete Task Confirmation</title>
+    </head>
+    <body>
+        <h1>Delete Task</h1>
+        <p>Are you sure you want to delete this Task?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Confirm Delete</button>
+            <button type="{% url 'Task_Detail' task.id %}">Return to your task list.</button>
+        </form>
+    </body>
+    </html>
+{% endblock content %}

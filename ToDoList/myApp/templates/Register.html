@@ -1,0 +1,22 @@
+<!--Afreen Ajaz-->
+{% extends 'Layout.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>User Registration</title>
+    </head>
+    <body>
+        <h2>User Registration</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit">Register</button>
+            <p>Already have an account? <button type="{% url 'Login' %}">Login</button></p>
+        </form>
+    </body>
+    </html>
+{% endblock content %}

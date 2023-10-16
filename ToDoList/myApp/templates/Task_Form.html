@@ -1,0 +1,21 @@
+<!--Afreen Ajaz-->
+{% extends 'Layout.html' %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Adding a new Task</title>
+    </head>
+    <body>
+        <h1>Add a New Task</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">submit</button>
+            <button type="{% url 'Task_List' %}">Return to your task list.</button>
+        </form>
+    </body>
+    </html>
+{% endblock content %}  
+
